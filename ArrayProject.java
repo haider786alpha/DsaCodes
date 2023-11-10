@@ -9,6 +9,9 @@ public class ArrayProject {
      static int choice1;//this is for linear and binary
      static int choice2;//this is for singlelinear and multiple linearsearch
      static int choice3;//this is for single and multiple binary search
+     static int choice4;//this is for ascending and descending option
+     static int choice5;//this is for ascending sorting
+     static int choice6;//this is for descending sorting
      static int size=20;//This is the size of the array
      static int item;//This is the insertion number which the user wants to insert
      static int N=0;//N is the number of elements in an array
@@ -88,15 +91,55 @@ public static void main(String[] args) {
                 
             break;
       
-      }}}
-      while(choice!=5);
+      }
+        case 5:
+              System.out.println("WHICH TYPE OF SORTING DO U WANT ");
+              System.out.println("1:ASCENDING");
+              System.out.println("2:DESCENDING");
+              choice4=sc.nextInt();
+            switch(choice4){
+                case 1:
+                    System.out.println("WHICH TYPE OF ASCENDING SORTING DO U WANT ");
+                    System.out.println("1:BUBBLE SORT");
+                    System.out.println("2:SELECTION SORT");
+                    System.out.println("3:INSERTION SORT");
+                    choice5=sc.nextInt();
+                    switch(choice5){
+                        case 1:
+                        break;
+                        case 2:
+                        break;
+                        case 3:
+                        break;
+                    }
+
+                break;
+                case 2:
+                    System.out.println("WHICH TYPE OF DESCENDING SORTING DO U WANT ");
+                    System.out.println("1:BUBBLE SORT");
+                    System.out.println("2:SELECTION SORT");
+                    System.out.println("3:INSERTION SORT");
+                    choice5=sc.nextInt();
+                    switch(choice6){
+                        case 1:
+                        break;
+                        case 2:
+                        break;
+                        case 3:
+                        break;
+                    }
+                break;
+              }
+    }}
+      while(choice!=6);
 }
 static void Display(){
     System.out.println("1:TRAVERSE");
     System.out.println("2:INSERTION");
     System.out.println("3:DELETION");
     System.out.println("4:SEARCHING");
-    System.out.println("5:exit");
+    System.out.println("5:SORTING");
+    System.out.println("6:exit");
     System.out.println("PRESS THE RELEVANT BUTTON FOR PROCESS");
 }
 static void Traverse(Scanner sc){
@@ -199,22 +242,6 @@ static void SingleBinarySearch(Scanner sc,int item){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-         for (int i = 0; i < N+LB-1; i++) 
-        {
-            for (int j = 0; j < N+LB-i-1; j++) 
-            {
-               if(A[j]>A[j+1])
-               {
-                 //int temp;
-                //temp=A[j];
-                //A[j]=A[j+1];
-                //A[j+1]=temp;
-                A[j]=A[j]+A[j+1];
-                A[j+1]=A[j]-A[j+1];
-                A[j]=A[j]-A[j+1];
-               }
-            }
-        }
     System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
     int low=LB;
@@ -240,22 +267,6 @@ static void MultiBinarySearch(Scanner sc,int item){
       if(N==0){
             System.out.println("THE ARRAY IS EMPTY");
             return;
-        }
-           for (int i = 0; i < N+LB-1; i++) 
-        {
-            for (int j = 0; j < N+LB-i-1; j++) 
-            {
-               if(A[j]>A[j+1])
-               {
-                 //int temp;
-                //temp=A[j];
-                //A[j]=A[j+1];
-                //A[j+1]=temp;
-                A[j]=A[j]+A[j+1];
-                A[j+1]=A[j]-A[j+1];
-                A[j]=A[j]-A[j+1];
-               }
-            }
         }
  System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
@@ -291,6 +302,37 @@ static void MultiBinarySearch(Scanner sc,int item){
         }
         System.out.println("ITEM NOT FOUND");
     }  
+static void BubbleSortD(Scanner sc){
+     if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+        }
+          for (int k=0; k<= N-1; k++) {
+            A[k]=sc.nextInt();
+        }
+        for (int i = 0; i < N-1; i++) 
+        {
+            for (int j = 0; j < N-i-1; j++) 
+            {
+               if(A[j]<A[j+1])
+               {
+                 //int temp;
+                //temp=A[j];
+                //A[j]=A[j+1];
+                //A[j+1]=temp;
+                A[j]=A[j]+A[j+1];
+                A[j+1]=A[j]-A[j+1];
+                A[j]=A[j]-A[j+1];
+               }
+            }
+        }
+        System.out.println("THE SORTED ARRAY IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+}
 }
 
      
