@@ -105,8 +105,10 @@ public static void main(String[] args) {
                     choice5=sc.nextInt();
                     switch(choice5){
                         case 1:
+                        BubbleSortA(sc);
                         break;
                         case 2:
+                        SelectionSortA(sc);
                         break;
                         case 3:
                         break;
@@ -303,6 +305,40 @@ static void MultiBinarySearch(Scanner sc,int item){
         }
         System.out.println("ITEM NOT FOUND");
     }  
+static void BubbleSortA(Scanner sc){
+     if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+        }
+        System.out.println("THE ARRAY BEFORE SORTING IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+        for (int i = 0; i < N-1; i++) 
+        {
+            for (int j = 0; j < N-i-1; j++) 
+            {
+               if(A[j]>A[j+1])
+               {
+                 int temp;
+                temp=A[j];
+                A[j]=A[j+1];
+                A[j+1]=temp;
+                // A[j]=A[j]+A[j+1];
+                // A[j+1]=A[j]-A[j+1];
+                // A[j]=A[j]-A[j+1];
+               }
+            }
+        }
+        System.out.println("THE SORTED ARRAY IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+}
 static void BubbleSortD(Scanner sc){
      if(N==0){
             System.out.println("THE ARRAY IS EMPTY");
@@ -330,6 +366,42 @@ static void BubbleSortD(Scanner sc){
                }
             }
         }
+        System.out.println("THE SORTED ARRAY IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+}
+static void SelectionSortA(Scanner sc){
+    if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+        }
+        System.out.println("THE ARRAY BEFORE SORTING IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+            for (int i = 0; i <=N-1; i++) 
+            {
+                int smallest=i;
+                for (int j = i+1; j < N; j++) 
+                {
+                   if(A[smallest]>A[j])
+                   {
+                    smallest =j;
+                   }
+                }
+                //  A[i]=A[i]+A[smallest];
+                //     A[smallest]=A[i]-A[smallest];
+                //     A[i]=A[i]-A[smallest];
+                int temp;
+                temp=A[smallest];
+                A[smallest]=A[i];
+                A[i]=temp; 
+            }
         System.out.println("THE SORTED ARRAY IS ");
             for (int i = 0; i <=N-1; i++) 
            {
