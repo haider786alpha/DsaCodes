@@ -91,6 +91,7 @@ public static void main(String[] args) {
             break;
       
       }
+      break;
         case 5:
               System.out.println("WHICH TYPE OF SORTING DO U WANT ");
               System.out.println("1:ASCENDING");
@@ -150,7 +151,7 @@ static void Traverse(Scanner sc){
        //ArrayValues(sc);
      System.out.println("THE ELEMENTS IN ARRAY ARE   ");
     for (int j=LB; j <= N+LB-1; j++) {
-        System.out.println(A[j]); 
+        System.out.print(A[j] +" "); 
      }
     }
 static void Deletion(Scanner sc,int k){
@@ -171,7 +172,7 @@ static void Deletion(Scanner sc,int k){
         }
     }
          for(int i=0;i<N+LB-1;i++){
-               System.out.println(A[i]);
+               System.out.print(A[i] + " ");
         }
         N=N-1;
         System.out.println("THE ARRAY ELEMENTS AFTER DELETION IS "+N);
@@ -198,9 +199,10 @@ static void Insertion(Scanner sc,int k,int item){
     }
         
          for(int i=0;i<=N;i++){
-               System.out.println(A[i]);
+               System.out.print(A[i] + " ");
         }
         N=N+1;
+        System.out.println();
         System.out.println("THE ARRAY ELEMENTS AFTER INSERTION IS "+N);
     }
 static void SingleLinearSearch(Scanner sc,int item){
@@ -310,10 +312,10 @@ static void BubbleSortA(Scanner sc){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-        System.out.println("THE ARRAY BEFORE SORTING IS ");
+        System.out.print("THE ARRAY BEFORE SORTING IS " + ":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i] + " ");
             
             }
         for (int i = 0; i < N-1; i++) 
@@ -332,10 +334,11 @@ static void BubbleSortA(Scanner sc){
                }
             }
         }
-        System.out.println("THE SORTED ARRAY IS ");
+        System.out.println();
+        System.out.print("THE SORTED ARRAY IS "+ ":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i] + " ");
             
             }
 }
@@ -344,10 +347,10 @@ static void BubbleSortD(Scanner sc){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-        System.out.println("THE ARRAY BEFORE SORTING IS ");
+        System.out.print("THE ARRAY BEFORE SORTING IS " + ":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
         for (int i = 0; i < N-1; i++) 
@@ -366,10 +369,11 @@ static void BubbleSortD(Scanner sc){
                }
             }
         }
-        System.out.println("THE SORTED ARRAY IS ");
+        System.out.println();
+        System.out.print("THE SORTED ARRAY IS "+":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
 }
@@ -378,10 +382,10 @@ static void SelectionSortA(Scanner sc){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-        System.out.println("THE ARRAY BEFORE SORTING IS ");
+        System.out.print("THE ARRAY BEFORE SORTING IS "+":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
             for (int i = 0; i <=N-1; i++) 
@@ -402,10 +406,11 @@ static void SelectionSortA(Scanner sc){
                 A[smallest]=A[i];
                 A[i]=temp; 
             }
-        System.out.println("THE SORTED ARRAY IS ");
+            System.out.println();
+        System.out.print("THE SORTED ARRAY IS "+":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
 }
@@ -414,10 +419,10 @@ static void SelectionSortD(Scanner sc){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-        System.out.println("THE ARRAY BEFORE SORTING IS ");
+        System.out.print("THE ARRAY BEFORE SORTING IS "+":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
             for (int i = 0; i <=N-1; i++) 
@@ -438,10 +443,11 @@ static void SelectionSortD(Scanner sc){
                 A[smallest]=A[i];
                 A[i]=temp; 
             }
-        System.out.println("THE SORTED ARRAY IS ");
+            System.out.println();
+        System.out.print("THE SORTED ARRAY IS "+":");
             for (int i = 0; i <=N-1; i++) 
            {
-            System.out.println(A[i]);
+            System.out.print(A[i]+" ");
             
             }
 }
