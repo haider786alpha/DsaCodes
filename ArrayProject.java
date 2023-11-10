@@ -1,6 +1,5 @@
 //[TRAVERSING,INSERTION,DELETION,SEARCHING(BINARY,LINEAR),SORTING(BUBBLE SORT) ARE USED]
 
-//import java.lang.*;
 import java.util.*;
 public class ArrayProject {
      static int LB=0;//LB is the lower boundary of an array
@@ -25,7 +24,7 @@ public static void main(String[] args) {
   
  do{  
   try {
-    Thread.sleep(3000);
+    Thread.sleep(2500);
             final String os = System.getProperty("os.name");
 
             if (os.contains("Windows")) {
@@ -119,11 +118,13 @@ public static void main(String[] args) {
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
-                    choice5=sc.nextInt();
+                    choice6=sc.nextInt();
                     switch(choice6){
                         case 1:
+                        BubbleSortD(sc);
                         break;
                         case 2:
+                        SelectionSortD(sc);
                         break;
                         case 3:
                         break;
@@ -307,25 +308,64 @@ static void BubbleSortD(Scanner sc){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-          for (int k=0; k<= N-1; k++) {
-            A[k]=sc.nextInt();
-        }
+        System.out.println("THE ARRAY BEFORE SORTING IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
         for (int i = 0; i < N-1; i++) 
         {
             for (int j = 0; j < N-i-1; j++) 
             {
                if(A[j]<A[j+1])
                {
-                 //int temp;
-                //temp=A[j];
-                //A[j]=A[j+1];
-                //A[j+1]=temp;
-                A[j]=A[j]+A[j+1];
-                A[j+1]=A[j]-A[j+1];
-                A[j]=A[j]-A[j+1];
+                 int temp;
+                temp=A[j];
+                A[j]=A[j+1];
+                A[j+1]=temp;
+                // A[j]=A[j]+A[j+1];
+                // A[j+1]=A[j]-A[j+1];
+                // A[j]=A[j]-A[j+1];
                }
             }
         }
+        System.out.println("THE SORTED ARRAY IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+}
+static void SelectionSortD(Scanner sc){
+    if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+        }
+        System.out.println("THE ARRAY BEFORE SORTING IS ");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.println(A[i]);
+            
+            }
+            for (int i = 0; i <=N-1; i++) 
+            {
+                int smallest=i;
+                for (int j = i+1; j < N; j++) 
+                {
+                   if(A[smallest]<A[j])
+                   {
+                    smallest =j;
+                   }
+                }
+                //  A[i]=A[i]+A[smallest];
+                //     A[smallest]=A[i]-A[smallest];
+                //     A[i]=A[i]-A[smallest];
+                int temp;
+                temp=A[smallest];
+                A[smallest]=A[i];
+                A[i]=temp; 
+            }
         System.out.println("THE SORTED ARRAY IS ");
             for (int i = 0; i <=N-1; i++) 
            {
