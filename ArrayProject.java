@@ -1,5 +1,4 @@
 //[TRAVERSING,INSERTION,DELETION,SEARCHING(BINARY,LINEAR),SORTING(BUBBLE SORT) ARE USED]
-
 import java.util.*;
 public class ArrayProject {
      static int LB=0;//LB is the lower boundary of an array
