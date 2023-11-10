@@ -5,12 +5,6 @@ public class ArrayProject {
      static int LB=0;//LB is the lower boundary of an array
      static int choice;//
      Thread t;
-     static int choice1;//this is for linear and binary
-     static int choice2;//this is for singlelinear and multiple linearsearch
-     static int choice3;//this is for single and multiple binary search
-     static int choice4;//this is for ascending and descending option
-     static int choice5;//this is for ascending sorting
-     static int choice6;//this is for descending sorting
      static int size=20;//This is the size of the array
      static int item;//This is the insertion number which the user wants to insert
      static int N=0;//N is the number of elements in an array
@@ -58,13 +52,13 @@ public static void main(String[] args) {
         case 4:
             System.out.println("WHICH TYPE OF SEARCHING DO U WANT");
             System.out.println("1:LINEAR SEARCHING " + "2:BINARY SEARCHING");
-            choice1=sc.nextInt();
-            switch (choice1) {
+            choice=sc.nextInt();
+            switch (choice) {
                 case 1:
                     System.out.println("WHICH TYPE OF LINEAR SEARCH DO U WANT");
                     System.out.println("1:SINGLE LINEAR SEARCH " + "2:MULTIPLE LINEAR SEARCH");
-                    choice2=sc.nextInt();
-                    switch (choice2)
+                    choice=sc.nextInt();
+                    switch (choice)
                      {
                         case 1:
                           SingleLinearSearch(sc,item);
@@ -76,8 +70,8 @@ public static void main(String[] args) {
                                     break;
                 case 2:
                     System.out.println("1:SINGLE BINARY SEARCH " + "2:MULTIPLE BINARY SEARCH");
-                    choice3=sc.nextInt();
-                     switch(choice3)
+                    choice=sc.nextInt();
+                     switch(choice)
                       {
                         case 1:
                            SingleBinarySearch(sc,item);
@@ -96,15 +90,15 @@ public static void main(String[] args) {
               System.out.println("WHICH TYPE OF SORTING DO U WANT ");
               System.out.println("1:ASCENDING");
               System.out.println("2:DESCENDING");
-              choice4=sc.nextInt();
-            switch(choice4){
+              choice=sc.nextInt();
+            switch(choice){
                 case 1:
                     System.out.println("WHICH TYPE OF ASCENDING SORTING DO U WANT ");
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
-                    choice5=sc.nextInt();
-                    switch(choice5){
+                    choice=sc.nextInt();
+                    switch(choice){
                         case 1:
                         BubbleSortA(sc);
                         break;
@@ -121,8 +115,8 @@ public static void main(String[] args) {
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
-                    choice6=sc.nextInt();
-                    switch(choice6){
+                    choice=sc.nextInt();
+                    switch(choice){
                         case 1:
                         BubbleSortD(sc);
                         break;
@@ -149,7 +143,7 @@ static void Display(){
 static void Traverse(Scanner sc){
      
        //ArrayValues(sc);
-     System.out.println("THE ELEMENTS IN ARRAY ARE   ");
+     System.out.println("THE ARRAY ELEMENTS ARE  ");
     for (int j=LB; j <= N+LB-1; j++) {
         System.out.print(A[j] +" "); 
      }
