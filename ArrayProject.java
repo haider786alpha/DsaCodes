@@ -4,7 +4,7 @@ public class ArrayProject {
      static int LB=0;//LB is the lower boundary of an array
      static int choice;//
      Thread t;
-     static int size=20;//This is the size of the array
+     static int size=30;//This is the size of the array
      static int item;//This is the insertion number which the user wants to insert
      static int N=0;//N is the number of elements in an array
      static int k;//k is which index number do u want to delete
