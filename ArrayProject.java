@@ -92,7 +92,7 @@ public static void main(String[] args) {
               choice=sc.nextInt();
             switch(choice){
                 case 1:
-                    System.out.println("WHICH TYPE OF ASCENDING SORTING DO U WANT ");
+                    System.out.println("WHICH TYPE OF ASCENDING SORT DO U WANT ");
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
@@ -105,12 +105,13 @@ public static void main(String[] args) {
                         SelectionSortA(sc);
                         break;
                         case 3:
+                        InsertionSortA();
                         break;
                     }
 
                 break;
                 case 2:
-                    System.out.println("WHICH TYPE OF DESCENDING SORTING DO U WANT ");
+                    System.out.println("WHICH TYPE OF DESCENDING SORT DO U WANT ");
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
@@ -120,9 +121,10 @@ public static void main(String[] args) {
                         BubbleSortD(sc);
                         break;
                         case 2:
-                        SelectionSortD(sc);
+                        SelectionSortD();
                         break;
                         case 3:
+                        InsertionSortD();
                         break;
                     }
                 break;
@@ -407,7 +409,7 @@ static void SelectionSortA(Scanner sc){
             
             }
 }
-static void SelectionSortD(Scanner sc){
+static void SelectionSortD(){
     if(N==0){
             System.out.println("THE ARRAY IS EMPTY");
             return;
@@ -443,6 +445,56 @@ static void SelectionSortD(Scanner sc){
             System.out.print(A[i]+" ");
             
             }
+}
+static void InsertionSortA(){
+           if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+             }
+            System.out.print("THE ARRAY BEFORE SORTING IS "+":");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.print(A[i]+" ");
+            
+            }
+            for(int i=1;i<=N-1;i++){
+            int currentvalue=A[i];
+             int j=i-1;
+             while(j>=0&&A[j]>currentvalue){
+                A[j+1]=A[j];
+                j--;
+             }
+             A[j+1]=currentvalue;
+            }
+            System.out.println();
+           for (int k=0;k<N;k++){
+           System.out.print(A[k]+" ");
+           } 
+}
+static void InsertionSortD(){
+           if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+             }
+            System.out.print("THE ARRAY BEFORE SORTING IS "+":");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.print(A[i]+" ");
+            
+            }
+            for(int i=1;i<=N-1;i++){
+            int currentvalue=A[i];
+             int j=i-1;
+             while(j>=0&&A[j]<currentvalue){
+                A[j+1]=A[j];
+                j--;
+             }
+             A[j+1]=currentvalue;
+            }
+            System.out.println();
+           for (int k=0;k<N;k++){
+           System.out.print(A[k]+" ");
+           } 
 }
 }
 
