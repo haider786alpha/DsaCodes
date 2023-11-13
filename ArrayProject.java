@@ -37,16 +37,13 @@ public static void main(String[] args) {
     
     switch(choice){
         case 1:
-                //ArrayValues(sc);
                 Traverse(sc);
                 break;
         case 2:
-               // ArrayValues(sc);
-                Insertion(sc,k,item);
+              Insertion(sc,k,item);
                 break;
         case 3:
-              // ArrayValues(sc);
-               Deletion(sc,k);
+             Deletion(sc,k);
                break;
         case 4:
             System.out.println("WHICH TYPE OF SEARCHING DO U WANT");
