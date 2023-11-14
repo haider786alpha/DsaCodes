@@ -464,6 +464,7 @@ static void InsertionSortA(){
              A[j+1]=currentvalue;
             }
             System.out.println();
+            System.out.print("THE SORTED ARRAY IS "+":");
            for (int k=0;k<N;k++){
            System.out.print(A[k]+" ");
            } 
@@ -489,6 +490,7 @@ static void InsertionSortD(){
              A[j+1]=currentvalue;
             }
             System.out.println();
+            System.out.print("THE SORTED ARRAY IS "+":");
            for (int k=0;k<N;k++){
            System.out.print(A[k]+" ");
            } 
