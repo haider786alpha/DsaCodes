@@ -16,7 +16,7 @@ public static void main(String[] args) {
 }
 static void CallingFunction(Scanner sc){
     do{  
-        ThreadFunction();
+    ThreadFunction();
     Display();
     choice =sc.nextInt();
     
@@ -273,6 +273,12 @@ static void SingleBinarySearch(Scanner sc,int item){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
+         for (int i = 0; i < A.length - 1; i++) {
+            if (A[i] > A[i + 1]||A[i] < A[i + 1]) {
+                System.out.println("ARRAY IS NOT SORTED");
+                return;
+            }
+        }
     System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
     int low=LB;
@@ -298,6 +304,12 @@ static void MultiBinarySearch(Scanner sc,int item){
       if(N==0){
             System.out.println("THE ARRAY IS EMPTY");
             return;
+        }
+         for (int i = 0; i < A.length - 1; i++) {
+            if (A[i] > A[i + 1]||A[i] < A[i + 1]) {
+                System.out.println("ARRAY IS NOT SORTED");
+                return;
+            }
         }
  System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
