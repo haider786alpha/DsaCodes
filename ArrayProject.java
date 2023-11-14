@@ -12,25 +12,11 @@ public class ArrayProject {
 public static void main(String[] args) {
 
     Scanner sc =new Scanner(System.in);
-
-  
- do{  
-  try {
-    Thread.sleep(2500);
-            final String os = System.getProperty("os.name");
-
-            if (os.contains("Windows")) {
-                // Clear the screen for Windows
-                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
-            } else {
-                // Clear the screen for Unix-like systems (Linux, macOS)
-                System.out.print("\033[H\033[2J");
-                System.out.flush();
-            }
-        } catch (Exception e) {
-            System.out.println("An error occurred while clearing the screen: " + e.getMessage());
-        }
-   
+    CallingFunction(sc);
+}
+static void CallingFunction(Scanner sc){
+    do{  
+        ThreadFunction();
     Display();
     choice =sc.nextInt();
     
@@ -92,6 +78,7 @@ public static void main(String[] args) {
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
+                    System.out.println("4:SHELL SORT");
                     choice=sc.nextInt();
                     switch(choice){
                         case 1:
@@ -103,6 +90,9 @@ public static void main(String[] args) {
                         case 3:
                         InsertionSortA();
                         break;
+                        case 4:
+                        ShellSortA();
+                        break;
                     }
 
                 break;
@@ -111,6 +101,7 @@ public static void main(String[] args) {
                     System.out.println("1:BUBBLE SORT");
                     System.out.println("2:SELECTION SORT");
                     System.out.println("3:INSERTION SORT");
+                    System.out.println("4:SHELL SORT");
                     choice=sc.nextInt();
                     switch(choice){
                         case 1:
@@ -122,11 +113,31 @@ public static void main(String[] args) {
                         case 3:
                         InsertionSortD();
                         break;
+                        case 4:
+                        ShellSortD();
+                        break;
                     }
                 break;
               }
     }}
       while(choice!=6);
+}
+static void ThreadFunction(){
+    try {
+    Thread.sleep(2500);
+            final String os = System.getProperty("os.name");
+
+            if (os.contains("Windows")) {
+                // Clear the screen for Windows
+                new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
+            } else {
+                // Clear the screen for Unix-like systems (Linux, macOS)
+                System.out.print("\033[H\033[2J");
+                System.out.flush();
+            }
+        } catch (Exception e) {
+            System.out.println("An error occurred while clearing the screen: " + e.getMessage());
+        }
 }
 static void Display(){
     System.out.println("1:TRAVERSE");
@@ -136,6 +147,25 @@ static void Display(){
     System.out.println("5:SORTING");
     System.out.println("6:exit");
     System.out.println("PRESS THE RELEVANT BUTTON FOR PROCESS");
+}
+static void UnsortedArray(){
+        if(N==0){
+            System.out.println("THE ARRAY IS EMPTY");
+            return;
+             }
+            System.out.print("THE ARRAY BEFORE SORTING IS "+":");
+            for (int i = 0; i <=N-1; i++) 
+           {
+            System.out.print(A[i]+" ");
+            
+            }
+}
+static void SortedArray(){
+      System.out.println();
+      System.out.print("THE SORTED ARRAY IS "+":");
+           for (int k=0;k<N;k++){
+           System.out.print(A[k]+" ");
+           }
 }
 static void Traverse(Scanner sc){
      
@@ -304,16 +334,7 @@ static void MultiBinarySearch(Scanner sc,int item){
         System.out.println("ITEM NOT FOUND");
     }  
 static void BubbleSortA(Scanner sc){
-     if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-        }
-        System.out.print("THE ARRAY BEFORE SORTING IS " + ":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i] + " ");
-            
-            }
+         UnsortedArray();
         for (int i = 0; i < N-1; i++) 
         {
             for (int j = 0; j < N-i-1; j++) 
@@ -330,25 +351,12 @@ static void BubbleSortA(Scanner sc){
                }
             }
         }
-        System.out.println();
-        System.out.print("THE SORTED ARRAY IS "+ ":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i] + " ");
-            
-            }
+         if(N!=0){
+         SortedArray();
+}
 }
 static void BubbleSortD(Scanner sc){
-     if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-        }
-        System.out.print("THE ARRAY BEFORE SORTING IS " + ":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+        UnsortedArray();
         for (int i = 0; i < N-1; i++) 
         {
             for (int j = 0; j < N-i-1; j++) 
@@ -365,25 +373,12 @@ static void BubbleSortD(Scanner sc){
                }
             }
         }
-        System.out.println();
-        System.out.print("THE SORTED ARRAY IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+       if(N!=0){
+       SortedArray();
+}
 }
 static void SelectionSortA(Scanner sc){
-    if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-        }
-        System.out.print("THE ARRAY BEFORE SORTING IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+            UnsortedArray();
             for (int i = 0; i <=N-1; i++) 
             {
                 int smallest=i;
@@ -402,25 +397,12 @@ static void SelectionSortA(Scanner sc){
                 A[smallest]=A[i];
                 A[i]=temp; 
             }
-            System.out.println();
-        System.out.print("THE SORTED ARRAY IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+           if(N!=0){
+           SortedArray();
+}
 }
 static void SelectionSortD(){
-    if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-        }
-        System.out.print("THE ARRAY BEFORE SORTING IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+            UnsortedArray();
             for (int i = 0; i <=N-1; i++) 
             {
                 int smallest=i;
@@ -439,25 +421,12 @@ static void SelectionSortD(){
                 A[smallest]=A[i];
                 A[i]=temp; 
             }
-            System.out.println();
-        System.out.print("THE SORTED ARRAY IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+            if(N!=0){
+              SortedArray();
+}
 }
 static void InsertionSortA(){
-           if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-             }
-            System.out.print("THE ARRAY BEFORE SORTING IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+          UnsortedArray();
             for(int i=1;i<=N-1;i++){
             int currentvalue=A[i];
              int j=i-1;
@@ -467,23 +436,12 @@ static void InsertionSortA(){
              }
              A[j+1]=currentvalue;
             }
-            System.out.println();
-            System.out.print("THE SORTED ARRAY IS "+":");
-           for (int k=0;k<N;k++){
-           System.out.print(A[k]+" ");
-           } 
+            if(N!=0){
+          SortedArray();
+}
 }
 static void InsertionSortD(){
-           if(N==0){
-            System.out.println("THE ARRAY IS EMPTY");
-            return;
-             }
-            System.out.print("THE ARRAY BEFORE SORTING IS "+":");
-            for (int i = 0; i <=N-1; i++) 
-           {
-            System.out.print(A[i]+" ");
-            
-            }
+          UnsortedArray();
             for(int i=1;i<=N-1;i++){
             int currentvalue=A[i];
              int j=i-1;
@@ -493,11 +451,49 @@ static void InsertionSortD(){
              }
              A[j+1]=currentvalue;
             }
-            System.out.println();
-            System.out.print("THE SORTED ARRAY IS "+":");
-           for (int k=0;k<N;k++){
-           System.out.print(A[k]+" ");
-           } 
+           if(N!=0){
+       SortedArray();
+}
+}
+static void ShellSortA(){
+    UnsortedArray();
+    int Gap=(int)(N/2);
+    while(Gap!=0){
+    for (int last=LB+Gap; last<=N+LB-1; last++) {
+        int min =A[last];
+        int i =last-Gap;
+        while(i>=LB && A[i]>min)
+        {
+            A[i+Gap]=A[i];
+            i=i-Gap;
+        }
+        A[i+Gap]=min;
+    }
+      Gap=(int)(Gap/2);
+    } 
+    if(N!=0){
+    SortedArray();
+}
+}
+static void ShellSortD(){
+    UnsortedArray();
+    int Gap=(int)(N/2);
+    while(Gap!=0){
+    for (int last=LB+Gap; last<=N+LB-1; last++) {
+        int min =A[last];
+        int i =last-Gap;
+        while(i>=LB && A[i]<min)
+        {
+            A[i+Gap]=A[i];
+            i=i-Gap;
+        }
+        A[i+Gap]=min;
+    }
+      Gap=(int)(Gap/2);
+    } 
+    if(N!=0){
+    SortedArray();
+}
 }
 }
 
