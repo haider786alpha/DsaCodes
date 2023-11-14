@@ -12,8 +12,7 @@ public class ArrayProject {
 public static void main(String[] args) {
 
     Scanner sc =new Scanner(System.in);
-    //System.out.println("ENTER THE SIZE OF AN ARRAY");
-    //size=sc.nextInt();
+
   
  do{  
   try {
