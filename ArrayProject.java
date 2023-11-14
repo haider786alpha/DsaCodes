@@ -10,7 +10,7 @@ public class ArrayProject {
      static int k;//k is which index number do u want to delete
      static int[] A= new int[size];
 public static void main(String[] args) {
-
+    
     Scanner sc =new Scanner(System.in);
     CallingFunction(sc);
 }
