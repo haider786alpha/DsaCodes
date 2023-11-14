@@ -140,11 +140,16 @@ static void Display(){
 }
 static void Traverse(Scanner sc){
      
-       //ArrayValues(sc);
+       if(N==0){
+        System.out.println("THE ARRAY IS EMPTY");
+        return;
+       }
+       else{
      System.out.println("THE ARRAY ELEMENTS ARE  ");
     for (int j=LB; j <= N+LB-1; j++) {
         System.out.print(A[j] +" "); 
-     }
+      }
+           }
     }
 static void Deletion(Scanner sc,int k){
         if(N==0){
