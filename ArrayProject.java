@@ -273,12 +273,6 @@ static void SingleBinarySearch(Scanner sc,int item){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-         for (int i = 0; i < A.length - 1; i++) {
-            if (A[i] > A[i + 1]||A[i] < A[i + 1]) {
-                System.out.println("ARRAY IS NOT SORTED");
-                return;
-            }
-        }
     System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
     int low=LB;
@@ -305,12 +299,6 @@ static void MultiBinarySearch(Scanner sc,int item){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
-         for (int i = 0; i < A.length - 1; i++) {
-            if (A[i] > A[i + 1]||A[i] < A[i + 1]) {
-                System.out.println("ARRAY IS NOT SORTED");
-                return;
-            }
-        }
  System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
     int low=LB;
@@ -318,21 +306,22 @@ static void MultiBinarySearch(Scanner sc,int item){
       int mid;
       int count=0;
       while(low<=high){
-        
            mid=(int)(low+high)/2;
            if(A[mid]==item){
-            count=count+1;
+            count=1;
             int i=mid+1;
             while(i<=high&&A[i]==item){
             count++;
-            i++;}
+            i++;
+        }
             i = mid-1;
             while(i>=low&&A[i]==item){
                 count++;
                 i--;
                }
-               System.out.println(item + " found "+ count +" times");
+            System.out.println(item + " found "+ count +" times");
          }
+         
         if(item<A[mid]){
             high=mid-1;
             return;
@@ -342,9 +331,12 @@ static void MultiBinarySearch(Scanner sc,int item){
            low=mid+1; 
            return;
            }
+           
         }
-        System.out.println("ITEM NOT FOUND");
-    }  
+        if (count==0) {
+             System.out.println("ITEM NOT FOUND");
+    }
+  }
 static void BubbleSortA(Scanner sc){
          UnsortedArray();
         for (int i = 0; i < N-1; i++) 
