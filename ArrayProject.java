@@ -299,43 +299,38 @@ static void MultiBinarySearch(Scanner sc,int item){
             System.out.println("THE ARRAY IS EMPTY");
             return;
         }
- System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
+        int count=0;
+        int Low=LB;
+        int High=N+LB-1;
+        System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
       item=sc.nextInt();
-    int low=LB;
-      int high=N+LB-1;
-      int mid;
-      int count=0;
-      while(low<=high){
-           mid=(int)(low+high)/2;
-           if(A[mid]==item){
-            count=1;
-            int i=mid+1;
-            while(i<=high&&A[i]==item){
-            count++;
-            i++;
-        }
-            i = mid-1;
-            while(i>=low&&A[i]==item){
-                count++;
-                i--;
-               }
-            System.out.println(item + " found "+ count +" times");
-         }
-         
-        if(item<A[mid]){
-            high=mid-1;
-            return;
-          }
-          else
-          {
-           low=mid+1; 
-           return;
-           }
-           
-        }
-        if (count==0) {
-             System.out.println("ITEM NOT FOUND");
-    }
+        int mid;
+        while(Low<=High){
+             mid=(Low+High)/2;
+            if(A[mid]==item){
+               count= count+1;
+               int i=mid+1;
+                while(i<=High&&A[i]==item){
+                    count=count+1;
+                    i=i+1; 
+                }
+                i=mid-1;
+                while(i>=Low&&A[i]==item){
+                    count=count+1;
+                    i=i-1;
+                }
+                System.out.print("Item found "+count+" times");
+                return;
+            }
+            if(A[mid]<item){
+                Low=mid+1;
+            }
+            else{
+                High=mid-1;
+            }
+       }
+System.out.print(" Item not found");
+     
   }
 static void BubbleSortA(Scanner sc){
          UnsortedArray();
