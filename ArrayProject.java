@@ -303,7 +303,7 @@ static void MultiBinarySearch(Scanner sc,int item){
         int Low=LB;
         int High=N+LB-1;
         System.out.println("ENTER THE ITEM WHICH U WANT TO SEARCH");
-      item=sc.nextInt();
+        item=sc.nextInt();
         int mid;
         while(Low<=High){
              mid=(Low+High)/2;
