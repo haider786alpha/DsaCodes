@@ -493,6 +493,9 @@ static void ShellSortD(){
     if(N!=0){
     SortedArray();
 }
+if(N!=0){
+    SortedArray();
+}
 }
 }
 
